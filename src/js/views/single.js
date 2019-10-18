@@ -7,13 +7,13 @@ export const Single = props => {
 	return (
 		<div className="jumbotron">
 			<Consumer>
-				{({ store }) => {
+				{/* {({ store }) => {
 					return (
 						<h1 className="display-4">
 							This will show the demo element: {store.demo[props.match.params.theid].title}
 						</h1>
 					);
-				}}
+				}} */}
 			</Consumer>
 
 			<hr className="my-4" />

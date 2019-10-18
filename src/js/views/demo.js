@@ -10,12 +10,9 @@ export const Demo = () => (
 		<ul className="list-group">
 			<Consumer>
 				{({ store, actions }) => {
-					return store.demo.map((item, index) => {
+					return store.characters.map((item, index) => {
 						return (
-							<li
-								key={index}
-								className="list-group-item d-flex justify-content-between"
-								style={{ background: item.background }}>
+							<li key={index} className="list-group-item d-flex justify-content-between">
 								<Link to={"/single/" + index}>
 									<span>Link to: {item.title}</span>
 								</Link>
@@ -26,6 +23,7 @@ export const Demo = () => (
 										Check store/flux.js scroll to the actions to see the code
 									</p>
 								) : null}
+								{item.name}
 								<button
 									className="btn btn-success"
 									onClick={() => actions.changeColor(index, "orange")}>

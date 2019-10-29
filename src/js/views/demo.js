@@ -10,23 +10,25 @@ export const Demo = () => (
 		<ul className="list-group">
 			<Consumer>
 				{({ store, actions }) => {
-					return store.characters.map((item, index) => {
+					return store.characters.map((character, i) => {
+						store.planets.map((planet, j) => {
+							<p key={j}>{planet.name}</p>;
+						});
 						return (
-							<li key={index} className="list-group-item d-flex justify-content-between">
-								<Link to={"/single/" + index}>
-									<span>Link to: {item.title}</span>
+							<li key={i} className="list-group-item d-flex justify-content-between">
+								<Link to={"/single/" + i}>
+									<span>Link to:{character.title}</span>
 								</Link>
+
 								{// Conditional render example
 								// Check to see if the background is orange, if so, display the message
-								item.background === "orange" ? (
-									<p style={{ color: item.initial }}>
+								i.background === "orange" ? (
+									<p style={{ color: i.initial }}>
 										Check store/flux.js scroll to the actions to see the code
 									</p>
 								) : null}
-								{item.name}
-								<button
-									className="btn btn-success"
-									onClick={() => actions.changeColor(index, "orange")}>
+								<p>Personaje: {character.name}</p>
+								<button className="btn btn-success" onClick={() => actions.changeColor(i, "orange")}>
 									Change Color
 								</button>
 							</li>
@@ -35,6 +37,7 @@ export const Demo = () => (
 				}}
 			</Consumer>
 		</ul>
+
 		<br />
 		<Link to="/">
 			<button className="btn btn-primary">Back home</button>

@@ -1,4 +1,4 @@
-const getState = ({ getStore, getActions, setStore }) => {
+const getState = ({ getStore, getActions, setStore, setAPI }) => {
 	return {
 		store: {
 			planets: [],
@@ -9,12 +9,13 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 		actions: {
 			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
+
+			getAPI: () => {
+				setAPI();
 			},
 
-			cargarAPI: () => {
-				fetch("https://swapi.co/api/people", {
+			loadCharacters: () => {
+				fetch("https://swapi.co/api/people/", {
 					method: "GET",
 					headers: {
 						"Content-Type": "application/json"
@@ -26,6 +27,44 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 					.then(data => {
 						setStore({ characters: data.results });
+					})
+					.catch(error => {
+						console.log(error);
+					});
+			},
+
+			loadPlanets: () => {
+				fetch("https://swapi.co/api/planets/", {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json"
+					}
+				})
+					.then(resp => {
+						return resp.json();
+					})
+
+					.then(data => {
+						setStore({ planets: data.results });
+					})
+					.catch(error => {
+						console.log(error);
+					});
+			},
+
+			loadVehicles: () => {
+				fetch("https://swapi.co/api/vehicles/", {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json"
+					}
+				})
+					.then(resp => {
+						return resp.json();
+					})
+
+					.then(data => {
+						setStore({ vehicles: data.results });
 					})
 					.catch(error => {
 						console.log(error);

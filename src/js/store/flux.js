@@ -4,17 +4,20 @@ const getState = ({ getStore, getActions, setStore }) => {
 			planets: [],
 			characters: [],
 			vehicles: [],
-			favorites: []
+			favorites: [
+				{
+					favoritesPeoples: [],
+					favoritesCharacters: [],
+					favoritesVehicles: []
+				}
+			]
 		},
 
 		actions: {
 			// Use getActions to call a function within a fuction
-			exampleFunction: () => {
-				getActions().changeColor(0, "green");
-			},
 
-			cargarAPI: () => {
-				fetch("https://swapi.co/api/people", {
+			loadCharacters: () => {
+				fetch("https://swapi.co/api/people/", {
 					method: "GET",
 					headers: {
 						"Content-Type": "application/json"
@@ -30,7 +33,47 @@ const getState = ({ getStore, getActions, setStore }) => {
 					.catch(error => {
 						console.log(error);
 					});
-			}
+			},
+
+			loadPlanets: () => {
+				fetch("https://swapi.co/api/planets/", {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json"
+					}
+				})
+					.then(resp => {
+						return resp.json();
+					})
+
+					.then(data => {
+						setStore({ planets: data.results });
+					})
+					.catch(error => {
+						console.log(error);
+					});
+			},
+
+			loadVehicles: () => {
+				fetch("https://swapi.co/api/vehicles/", {
+					method: "GET",
+					headers: {
+						"Content-Type": "application/json"
+					}
+				})
+					.then(resp => {
+						return resp.json();
+					})
+
+					.then(data => {
+						setStore({ vehicles: data.results });
+					})
+					.catch(error => {
+						console.log(error);
+					});
+			},
+
+			addFavorites: (item, i) => {}
 		}
 	};
 };

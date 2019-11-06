@@ -1,12 +1,15 @@
 import React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import ScrollToTop from "./component/scrollToTop";
-
-import { Home } from "./views/home";
-import { Demo } from "./views/demo";
-import { Single } from "./views/single";
+//import { Home } from "./views/home";
+//import { Favorites } from "./views/favorites";
+import { AllCharacters } from "./views/allCharacters";
+import { AllPlanets } from "./views/allPlanets";
+import { AllVehicles } from "./views/allVehicles";
+import { BigCharacter } from "./views/bigCharacter";
+import { BigPlanet } from "./views/bigPlanet";
+import { BigVehicle } from "./views/bigVehicle";
 import injectContext from "./store/appContext";
-
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
 
@@ -22,9 +25,10 @@ export const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Switch>
-						<Route exact path="/" component={Home} />
-						<Route path="/demo" component={Demo} />
-						<Route path="/single/:theid" component={Single} />
+						<Route exact path="/" component={AllVehicles} />
+						<Route path="/bigCharacter/:theid" component={BigCharacter} />
+						<Route path="/bigPlanet/:theid" component={BigPlanet} />
+						<Route path="/bigVehicle/:theid" component={BigVehicle} />
 						<Route render={() => <h1>Not found!</h1>} />
 					</Switch>
 					<Footer />

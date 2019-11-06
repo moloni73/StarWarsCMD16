@@ -1,4 +1,4 @@
-const getState = ({ getStore, getActions, setStore }) => {
+const getState = ({ getStore, getActions, setStore, setAPI }) => {
 	return {
 		store: {
 			planets: [],
@@ -15,6 +15,7 @@ const getState = ({ getStore, getActions, setStore }) => {
 
 		actions: {
 			// Use getActions to call a function within a fuction
+
 
 			loadCharacters: () => {
 				fetch("https://swapi.co/api/people/", {

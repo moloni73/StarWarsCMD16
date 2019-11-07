@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import rigoImage from "../../img/rigo-baby.jpg";
+import shipsImage from "../../img/ships.jpg";
 import { Consumer } from "../store/appContext";
 import PropTypes from "prop-types";
 
@@ -23,14 +23,19 @@ export const AllVehicles = () => {
 				<Consumer>
 					{({ store, actions }) => {
 						return store.vehicles.map((item, index) => {
+							let vname = [];
+							vname[index] = item.name;
+							const fname = vname[0];
+
 							return (
 								<div key={index} className="col-4">
 									<div className="card">
 										<Link to={"/bigVehicle/" + index}>
-											<img className="card-img-top" src={rigoImage} alt="Card image" />
+											<img className="card-img-top" src={shipsImage} alt="Card image" />
 										</Link>
 
 										<div className="card-body">
+											<h4 className="card-title">{fname}</h4>
 											<h4 className="card-title">{item.name}</h4>
 
 											<button

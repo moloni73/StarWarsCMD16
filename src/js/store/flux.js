@@ -16,7 +16,6 @@ const getState = ({ getStore, getActions, setStore, setAPI }) => {
 		actions: {
 			// Use getActions to call a function within a fuction
 
-
 			loadCharacters: () => {
 				fetch("https://swapi.co/api/people/", {
 					method: "GET",

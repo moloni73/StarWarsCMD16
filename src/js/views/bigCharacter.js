@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import rigoImage from "../../img/rigo-baby.jpg";
+import charactersImage from "../../img/characters.jpg";
 import { Consumer } from "../store/appContext";
 import PropTypes from "prop-types";
 
@@ -25,7 +25,7 @@ export const BigCharacter = props => {
 											<span>addFavorites</span>
 										</button>
 									</div>
-									<img className="card-img-bottom" src={rigoImage} alt="Card image" />
+									<img className="card-img-bottom" src={charactersImage} alt="Card image" />
 								</div>
 							</div>
 							<div className="col-6">

@@ -9,6 +9,7 @@ import { AllVehicles } from "./views/allVehicles";
 import { BigCharacter } from "./views/bigCharacter";
 import { BigPlanet } from "./views/bigPlanet";
 import { BigVehicle } from "./views/bigVehicle";
+import { Home } from "./views/home";
 import injectContext from "./store/appContext";
 import { Navbar } from "./component/navbar";
 import { Footer } from "./component/footer";
@@ -25,7 +26,10 @@ export const Layout = () => {
 				<ScrollToTop>
 					<Navbar />
 					<Switch>
-						<Route exact path="/" component={AllVehicles} />
+						<Route exact path="/" component={Home} />
+						<Route path="/allVehicles" component={AllVehicles} />
+						<Route path="/allCharacters" component={AllCharacters} />
+						<Route path="/allPlanets" component={AllPlanets} />
 						<Route path="/bigCharacter/:theid" component={BigCharacter} />
 						<Route path="/bigPlanet/:theid" component={BigPlanet} />
 						<Route path="/bigVehicle/:theid" component={BigVehicle} />

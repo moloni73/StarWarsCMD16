@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import rigoImage from "../../img/rigo-baby.jpg";
+import charactersImage from "../../img/characters.jpg";
 import { Consumer } from "../store/appContext";
 import PropTypes from "prop-types";
 
@@ -27,7 +27,7 @@ export const AllCharacters = () => {
 								<div key={index} className="col-4">
 									<div className="card">
 										<Link to={"/bigCharacter/" + index}>
-											<img className="card-img-top" src={rigoImage} alt="Card image" />
+											<img className="card-img-top" src={charactersImage} alt="Card image" />
 										</Link>
 
 										<div className="card-body">

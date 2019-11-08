@@ -40,7 +40,7 @@ export const AllVehicles = () => {
 
 											<button
 												className="btn btn-success"
-												onClick={() => actions.addFavorites(item, index)}>
+												onClick={() => actions.addFavorites(item)}>
 												<span>addFavorites</span>
 											</button>
 										</div>

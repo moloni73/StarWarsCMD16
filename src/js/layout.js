@@ -6,6 +6,7 @@ import ScrollToTop from "./component/scrollToTop";
 import { AllCharacters } from "./views/allCharacters";
 import { AllPlanets } from "./views/allPlanets";
 import { AllVehicles } from "./views/allVehicles";
+import { AllFavorites } from "./views/allFavorites";
 import { BigCharacter } from "./views/bigCharacter";
 import { BigPlanet } from "./views/bigPlanet";
 import { BigVehicle } from "./views/bigVehicle";
@@ -30,6 +31,7 @@ export const Layout = () => {
 						<Route path="/allVehicles" component={AllVehicles} />
 						<Route path="/allCharacters" component={AllCharacters} />
 						<Route path="/allPlanets" component={AllPlanets} />
+						<Route path="/allFavorites" component={AllFavorites} />
 						<Route path="/bigCharacter/:theid" component={BigCharacter} />
 						<Route path="/bigPlanet/:theid" component={BigPlanet} />
 						<Route path="/bigVehicle/:theid" component={BigVehicle} />

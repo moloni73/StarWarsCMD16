@@ -1,16 +1,10 @@
-const getState = ({ getStore, getActions, setStore, setAPI }) => {
+const getState = ({ getStore, getActions, setStore }) => {
 	return {
 		store: {
 			planets: [],
 			characters: [],
 			vehicles: [],
-			favorites: [
-				{
-					favoritesPeoples: [],
-					favoritesCharacters: [],
-					favoritesVehicles: []
-				}
-			]
+			favorites: []
 		},
 
 		actions: {
@@ -73,7 +67,17 @@ const getState = ({ getStore, getActions, setStore, setAPI }) => {
 					});
 			},
 
-			addFavorites: (item, i) => {}
+			addFavorites: nitem => {
+				const nstore = getStore();
+				const favorito = nstore.favorites.concat(nitem);
+				setStore({ favorites: favorito });
+			},
+
+			delFavorites: ditem => {
+				const fstore = getStore();
+				const favorito = fstore.favorites.concat(ditem);
+				setStore({ favorites: favorito });
+			}
 		}
 	};
 };

@@ -19,7 +19,9 @@ export const BigPlanet = props => {
 										<h2 className="card-title">{store.planets[props.match.params.theid].name}</h2>
 										<button
 											className="btn btn-success"
-											onClick={() => actions.addFavorites(item, index)}>
+											onClick={() =>
+												actions.addFavorites(store.planets[props.match.params.theid])
+											}>
 											<span>addFavorites</span>
 										</button>
 									</div>
@@ -60,7 +62,7 @@ export const BigPlanet = props => {
 										</ul>
 									</div>
 								</div>
-								<Link to="/allCharacters">
+								<Link to="/">
 									<span className="btn btn-primary btn-lg" href="#" role="button">
 										Back home
 									</span>

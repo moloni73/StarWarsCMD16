@@ -19,7 +19,9 @@ export const BigVehicle = props => {
 										<h2 className="card-title">{store.vehicles[props.match.params.theid].name}</h2>
 										<button
 											className="btn btn-success"
-											onClick={() => actions.addFavorites(item, index)}>
+											onClick={() =>
+												actions.addFavorites(store.vehicles[props.match.params.theid])
+											}>
 											<span>addFavorites</span>
 										</button>
 									</div>

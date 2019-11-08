@@ -17,12 +17,12 @@ const injectContext = PassedComponent => {
 					setState({
 						store: Object.assign(state.store, updatedStore),
 						actions: { ...state.actions }
-					}),
-				setAPI: () => {
+					})
+				/*	setAPI: () => {
 					state.actions.loadCharacters();
 					state.actions.loadPlanets();
 					state.actions.loadVehicles();
-				}
+				}*/
 			})
 		);
 

@@ -21,7 +21,9 @@ export const BigCharacter = props => {
 										</h2>
 										<button
 											className="btn btn-success"
-											onClick={() => actions.addFavorites(item, index)}>
+											onClick={() =>
+												actions.addFavorites(store.characters[props.match.params.theid])
+											}>
 											<span>addFavorites</span>
 										</button>
 									</div>
@@ -56,7 +58,7 @@ export const BigCharacter = props => {
 										</ul>
 									</div>
 								</div>
-								<Link to="/allCharacters">
+								<Link to="/">
 									<span className="btn btn-primary btn-lg" href="#" role="button">
 										Back home
 									</span>
